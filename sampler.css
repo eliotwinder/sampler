@@ -1,0 +1,46 @@
+@charset "UTF-8";
+.pad {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-style: solid;
+}
+
+#drumpads {
+	width: 400px;
+	height: 200px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	border-style: solid;
+}
+
+#sequencer {
+	display: inline;
+	width: 160px;
+}
+.seqsection {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	font-family: Helvetica;
+	border-style: solid;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.playon {
+	background-color: red;
+}
+
+#startgrid {
+	display: inline-block;
+	width: 50px;
+	height: 20px;
+	text-align: center;
+	border-style: solid;
+	
+}
