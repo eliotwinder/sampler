@@ -15,7 +15,7 @@ function playSound(buffer) {
   source.buffer = buffer;
   var masterGain = context.createGain();
   source.connect(masterGain);
-  masterGain.gain.value = 0.05;
+  masterGain.gain.value = 0.5;
   masterGain.connect(context.destination);
   source.start(0);
 }
@@ -39,8 +39,9 @@ function addSound( object, filepath ) {
     //sequencer setup
 
     var thisRow = $("<div data-pad=\""+rowNumber+"\" class=\"sequencerrow\"></div>");
+    var rowName = $("#drumpads").find("div:nth-child("+rowNumber+")").text();
     
-    $()
+    $("#sequencer").append(rowName);
     $("#sequencer").append(thisRow);
 
     
@@ -71,8 +72,8 @@ function addSound( object, filepath ) {
 function playTrack() {
   function playColumn( column ) {
     $(".sequencerrow").each( function( index ) {
-      var thisSection = $(this).find("div:nth-child("+column+")");
-      if (thisSection).hasClass("playon") {
+      var thisSection = $(this).find(".seqsection:nth-child("+column+")");
+      if (thisSection.hasClass("playon")) {
         var sound = sounds[index];
         sound.play();
       }
