@@ -1,0 +1,5 @@
+volume knob
+format - add quarter notes, row names
+choose your own samples/multiple drum machines
+localstorage
+change grid
