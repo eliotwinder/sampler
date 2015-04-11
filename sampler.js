@@ -1,6 +1,8 @@
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 var context = new window.AudioContext();
 
+var rowNumber = 1;
+var numberOfColumns = 4;
 
 function addSound( object, filepath ) {
   var sound;
@@ -8,7 +10,6 @@ function addSound( object, filepath ) {
   request.open('GET', filepath , true);
   request.responseType = 'arraybuffer';
 
-  var rowNumber = 1;
 
 
   // Decode asynchronously
@@ -32,21 +33,28 @@ function addSound( object, filepath ) {
     //sequencer setup
     
 
-    numberOfColumns = 4;
+    
 
     $("#sequencer").append("<div data-pad=\""+rowNumber+"\" class=\"sequencerrow\"></div>")
 
-    rowNumber += 1;
-
     for (var i = 0; i < numberOfColumns; i++ ) {
-      $("#sequencer").append("<div class=\"seqsection\"></div>");
+      var section = $("<div class=\"seqsection\" data-pad=\""+rowNumber+"\"></div>");
+      $("#sequencer").append(section);
+      section.click( function() {
+        if ($(this).hasClass("playon")) {
+          $(this).removeClass( "playon" );
+        } else {
+          $(this).addClass("playon");
+        } 
+      });
     } 
 
     object.play = function() {
       playSound(sound);
     };
-  }
 
+    rowNumber += 1;
+  }
   request.send();
 }
 
@@ -72,20 +80,14 @@ $(function(){
     $(this).attr("padnumber", soundIndex );
   });
   
-  //add/remove playon class in the sequencer
-  $(".seqsection").click( function(){
-console.log(".seqsection");
-    if ($(this).hasClass("playon")) {
-        $(this).removeClass( "playon" );
-    } else {
-      $(this).addClass("playon");
-    }
-  });
+  
 
   $("#startgrid").click( function(){
-    
+    var startTime = new Date();
+    setInterval( playTrack)
 
   });
-
+  
+  
 });
 
