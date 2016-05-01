@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+div {
+	margin: 0;
+	vertical-align: top;
+}
 .pad {
 	width: 100px;
 	height: 100px;
@@ -7,33 +12,58 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	padding: 5px;
 	border-style: solid;
+	border-color: #F9A808;
+	background-color: #C0C0C0;
 }
 
 #drumpads {
 	width: 400px;
 	height: 200px;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-	border-style: solid;
+	margin: 10px;
+	display: inline-block;
 }
 
 #sequencer {
-	display: inline;
-	width: 160px;
+	display: inline;back
+}
+
+.sequencerrow {
+	display: inline-block;
+	height: 40px;
 }
 .seqsection {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
 	font-family: Helvetica;
+	background-color: #DCC6E0;
 	border-style: solid;
+	border-color: #F9A808;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.playon {
-	background-color: red;
+.rowtitle {
+	display: inline-block;
+	width: 70px;
+	height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+.playon.seqsection {
+	background-color: purple;
+}
+
+.downbeat {
+	background-color: #be90d4;
 }
 
 #startgrid {
@@ -42,5 +72,39 @@
 	height: 20px;
 	text-align: center;
 	border-style: solid;
-	
+}
+body {
+	margin: 0;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+#samplercontainer {
+	height: 600px;
+	margin: 10px;
+	background-color: #F9A808;
+	width: 740px;
+}
+#controlpanel {
+	display: inline-block;
+	width: 300px;
+	height: 240px;
+	padding-top: 38px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+.playing {
+	border-color: #674172;
+}
+input {
+	width: 35px;
+}
+#seqsteps {
+}
+#controlpanel #mastervolume {
+	width: 125px;
 }

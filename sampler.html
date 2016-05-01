@@ -8,7 +8,14 @@
 <script src="sampler.js"></script>
 </head>
 <body>
-<input type='number' value='120' id='tempo'>
+<div id="samplercontainer">
+<div id="controlpanel">
+Tempo: <input type='number' value='120' id='tempo'><br>
+Volume: <input type='range' id='mastervolume' max='1' min='0' step="0.01"><br>
+# of sequencer steps: <input type="number" id='seqsteps' min='0' step='1' value='16'><br>
+Subdivision: <input type="number" id='subdivision' min='0' step='1' value='4'><br><br>
+<div id="startgrid">play</div><br>
+</div>
 <div id='drumpads'>
     <div class='pad'>bass</div><div 
     class='pad'>hh closed</div><div
@@ -21,7 +28,7 @@
 </div>
 <br>
 <div id="sequencer">
-	<div id="startgrid">play</div><br><br>
+</div>  
 </div>
 </body>
 </html>
